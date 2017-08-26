@@ -37,16 +37,17 @@ jobs:
             pip install -r requirements.txt
             sudo pip install awscli --upgrade --user
 
-      - deployment: |
-          TAG=0.1.$CIRCLE_BUILD_NUM
+      - deploy: 
+          command: |
+            TAG=0.1.$CIRCLE_BUILD_NUM
 
-          aws ecr get-login --no-include-email --region us-west-1
+            aws ecr get-login --no-include-email --region us-west-1
 
-          docker build -t $PROJECT_NAME .
+            docker build -t $PROJECT_NAME .
 
-          docker tag $PROJECT_NAME:latest 753956590207.dkr.ecr.us-west-1.amazonaws.com/$PROJECT_NAME:latest
+            docker tag $PROJECT_NAME:latest 753956590207.dkr.ecr.us-west-1.amazonaws.com/$PROJECT_NAME:latest
 
-          docker push 753956590207.dkr.ecr.us-west-1.amazonaws.com/boilerplate-api:latest
+            docker push 753956590207.dkr.ecr.us-west-1.amazonaws.com/boilerplate-api:latest
 
       # - deploy:
       #     name: Deploy to S3 if branch is Prod
