@@ -40,7 +40,7 @@ jobs:
           name: Install aws dependencies
           working_directory: /
           command: |
-            sudo apt-get install awscli
+            sudo apt-get install awscli --upgrage --user
 
       - deploy: 
           command: |
