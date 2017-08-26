@@ -5,7 +5,6 @@
 version: 2
 jobs:
   build:
-    working_directory: /app
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
@@ -34,8 +33,9 @@ jobs:
           name: Install dependencies
           command: |
             python3 -m venv venv
-            pip install awscli
+            . venv/bin/activate
             pip install -r requirements.txt
+            sudo pip install awscli --upgrade --user
 
       - run: |
           TAG=0.1.$CIRCLE_BUILD_NUM
