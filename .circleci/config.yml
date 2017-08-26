@@ -42,7 +42,7 @@ jobs:
           command: |
             sudo pip install awscli --upgrade --user
 
-            ls user/local/bin
+            ls usr/local/bin
 
       # - deploy: 
       #     command: |
