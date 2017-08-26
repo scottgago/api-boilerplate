@@ -37,7 +37,7 @@ jobs:
             pip install -r requirements.txt
             pip install awscli --upgrade --user
 
-            ls venv/bin
+            ls venv/bin/python
 
       # - deploy: 
       #     command: |
