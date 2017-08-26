@@ -37,7 +37,7 @@ jobs:
             pip install -r requirements.txt
             sudo pip install awscli --upgrade --user
 
-      - run: |
+      - deployment: |
           TAG=0.1.$CIRCLE_BUILD_NUM
 
           aws ecr get-login --no-include-email --region us-west-1
