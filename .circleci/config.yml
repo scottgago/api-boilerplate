@@ -33,13 +33,14 @@ jobs:
           name: Install dependencies
           command: |
             python3 -m venv venv
+            . venv/bin/activate
             pip install -r requirements.txt
 
       - run:
           name: Install aws dependencies
           working_directory: /
           command: |
-            pip install awscli --upgrade --user
+            sudo pip install awscli --upgrade --user
 
             aws --version
 
