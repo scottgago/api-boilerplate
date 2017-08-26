@@ -44,7 +44,7 @@ jobs:
       #       python manage.py test
 
       - run: |
-          pip install awscli --upgrade --user
+          apt-get update && apt-get install -y awscli
 
           TAG=0.1.$CIRCLE_BUILD_NUM
 
