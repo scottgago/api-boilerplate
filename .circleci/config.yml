@@ -38,11 +38,10 @@ jobs:
 
       - run:
           name: Install aws dependencies
-          working_directory: /
           command: |
             sudo pip install awscli --upgrade --user
 
-            ~/.local/bin/aws --version
+            ls
 
       # - deploy: 
       #     command: |
