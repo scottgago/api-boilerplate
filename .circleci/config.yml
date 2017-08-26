@@ -42,7 +42,7 @@ jobs:
           command: |
             sudo pip install awscli --upgrade --user
 
-            sudo aws --version
+            ls -al /usr/local/bin/python
 
       - deploy: 
           command: |
