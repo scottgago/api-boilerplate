@@ -40,7 +40,7 @@ jobs:
           name: Install aws dependencies
           working_directory: /
           command: |
-            sudo apt-get -y -qq install awscli=1.11.140
+            sudo apt-get -y -qq install awscli
 
       - deploy: 
           command: |
