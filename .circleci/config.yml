@@ -35,14 +35,9 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
+            pip install awscli --upgrade --user
 
-      - run:
-          name: Install aws dependencies
-          working_directory: /
-          command: |
-            sudo pip install awscli --upgrade --user
-
-            ls usr/local/bin/python3.6
+            ls
 
       # - deploy: 
       #     command: |
